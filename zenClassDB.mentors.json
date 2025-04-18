@@ -1,0 +1,26 @@
+[{
+  "_id": "MID001",
+  "name": "Saran",
+  "email": "saran@zen.com",
+  "batch": "B01WD",
+  "students": [
+    "UID001",
+    "UID002",
+    "UID003",
+    "UID004",
+    "UID005"
+  ]
+},
+{
+  "_id": "MID002",
+  "name": "Thiru",
+  "email": "thiru@zen.com",
+  "batch": "B02WE",
+  "students": [
+    "UID006",
+    "UID007",
+    "UID008",
+    "UID009",
+    "UID010"
+  ]
+}]

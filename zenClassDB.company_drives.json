@@ -1,0 +1,31 @@
+[{
+  "_id": "CD001",
+  "company": "Google",
+  "date": "2020-10-20",
+  "students_appeared": [
+    "UID001",
+    "UID002",
+    "UID003"
+  ]
+},
+{
+  "_id": "CD002",
+  "company": "Amazon",
+  "date": "2020-10-25",
+  "students_appeared": [
+    "UID004",
+    "UID005",
+    "UID006"
+  ]
+},
+{
+  "_id": "CD003",
+  "company": "Zoho",
+  "date": "2020-10-30",
+  "students_appeared": [
+    "UID007",
+    "UID008",
+    "UID009",
+    "UID010"
+  ]
+}]

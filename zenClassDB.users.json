@@ -1,0 +1,70 @@
+[{
+  "_id": "UID001",
+  "name": "Logu",
+  "email": "logu@gmail.com",
+  "mentor_id": "MID001",
+  "batch": "B01WD"
+},
+{
+  "_id": "UID002",
+  "name": "Sami",
+  "email": "sami@gmail.com",
+  "mentor_id": "MID001",
+  "batch": "B01wd"
+},
+{
+  "_id": "UID003",
+  "name": "Karthi",
+  "email": "karthi@gmail.com",
+  "mentor_id": "MID001",
+  "batch": "B01WD"
+},
+{
+  "_id": "UID004",
+  "name": "Ramu",
+  "email": "ramu@gmail.com",
+  "mentor_id": "MID001",
+  "batch": "B01WD"
+},
+{
+  "_id": "UID005",
+  "name": "Nandhu",
+  "email": "nandhu@gmail.com",
+  "mentor_id": "MID001",
+  "batch": "B01WD"
+},
+{
+  "_id": "UID006",
+  "name": "Deepak",
+  "email": "deepak@gmail.com",
+  "mentor_id": "MID002",
+  "batch": "B02WE"
+},
+{
+  "_id": "UID007",
+  "name": "Selva",
+  "email": "selva@gmail.com",
+  "mentor_id": "MID002",
+  "batch": "B02WE"
+},
+{
+  "_id": "UID008",
+  "name": "Rishi",
+  "email": "rishi@gmail.com",
+  "mentor_id": "MID002",
+  "batch": "B02WE"
+},
+{
+  "_id": "UID009",
+  "name": "Sri",
+  "email": "sri@gmail.com",
+  "mentor_id": "MID002",
+  "batch": "B02WE"
+},
+{
+  "_id": "UID010",
+  "name": "Gokul",
+  "email": "gokul@gmail.com",
+  "mentor_id": "MID002",
+  "batch": "B02WE"
+}]

@@ -1,0 +1,99 @@
+//To Create and Use DataBase//
+use zenClassDB
+________________________________________________________________________________________________
+
+//To Create and Insert Documents(Data) into Users Collection(Table)//
+
+db.users.insertMany([
+  {_id:'UID001', name:'Logu', email:'logu@gmail.com', mentor_id:'MID001', batch:'B01WD'},
+  {_id:'UID002', name:'Sami', email:'sami@gmail.com', mentor_id:'MID001', batch:'B01WD'},
+  {_id:'UID003', name:'Karthi', email:'karthi@gmail.com', mentor_id:'MID001', batch:'B01WD'},
+  {_id:'UID004', name:'Ramu', email:'ramu@gmail.com', mentor_id:'MID001', batch:'B01WD'},
+  {_id:'UID005', name:'Nandhu', email:'nandhu@gmail.com', mentor_id:'MID001', batch:'B01WD'},
+  {_id:'UID006', name:'Deepak', email:'deepak@gmail.com', mentor_id:'MID002', batch:'B02WE'},
+  {_id:'UID007', name:'Selva', email:'selva@gmail.com', mentor_id:'MID002', batch:'B02WE'},
+  {_id:'UID008', name:'Rishi', email:'rishi@gmail.com', mentor_id:'MID002', batch:'B02WE'},
+  {_id:'UID009', name:'Sri', email:'sri@gmail.com', mentor_id:'MID002', batch:'B02WE'},
+  {_id:'UID010', name:'Gokul', email:'gokul@gmail.com', mentor_id:'MID002', batch:'B02WE'}
+])
+________________________________________________________________________________________________
+
+//To Create and Insert Documents(Data) into CodeKata Collection(Table)//
+
+db.codekata.insertMany([
+  {_id:'CKID001', user_id:'UID001', problems_solved:10, },
+  {_id:'CKID002', user_id:'UID002', problems_solved:4, },
+  {_id:'CKID003', user_id:'UID003', problems_solved:6, },
+  {_id:'CKID004', user_id:'UID004', problems_solved:5, },
+  {_id:'CKID005', user_id:'UID005', problems_solved:9, },
+  {_id:'CKID006', user_id:'UID006', problems_solved:7, },
+  {_id:'CKID007', user_id:'UID007', problems_solved:8, },
+  {_id:'CKID008', user_id:'UID008', problems_solved:10, },
+  {_id:'CKID009', user_id:'UID009', problems_solved:7, },
+  {_id:'CKID010', user_id:'UID010', problems_solved:6, },
+])
+________________________________________________________________________________________________
+
+//To Create and Insert Documents(Data) into Attendance Collection(Table)//
+
+db.attendance.insertMany([
+  { _id:'AID001',user_id:'UID001', date:"2020-10-15", status: "Absent" },
+  { _id:'AID002',user_id:'UID002', date:"2020-10-17", status: "Present" },
+  { _id:'AID003',user_id:'UID003', date:"2020-10-19", status: "Present" },
+  { _id:'AID004',user_id:'UID004', date:"2020-10-21", status: "Absent" },
+  { _id:'AID005',user_id:'UID005', date:"2020-10-23", status: "Present" },
+  { _id:'AID006',user_id:'UID006', date:"2020-10-25", status: "Absent" },
+  { _id:'AID007',user_id:'UID007', date:"2020-10-27", status: "Absent" },
+  { _id:'AID008',user_id:'UID008', date:"2020-10-29", status: "Present" },
+  { _id:'AID009',user_id:'UID009', date:"2020-10-30", status: "Present" },
+  { _id:'AID010',user_id:'UID010', date:"2020-10-31", status: "Present" },
+  ])
+________________________________________________________________________________________________
+
+//To Create and Insert Documents(Data) into Topics Collection(Table)//
+
+db.topics.insertMany([
+  { _id:'TPC001', topic: "HTML", date:"2020-10-15"},
+  { _id:'TPC002', topic: "CSS", date:"2020-10-17"},
+  { _id:'TPC003', topic: "Tailwind CSS", date:"2020-10-19"},
+  { _id:'TPC004', topic: "Javascript", date:"2020-10-21"},
+  { _id:'TPC005', topic: "Github", date:"2020-10-23"},
+  { _id:'TPC006', topic: "React JS", date:"2020-10-25"},
+  { _id:'TPC007', topic: "Redux", date:"2020-10-27"},
+  { _id:'TPC008', topic: "SQL", date:"2020-10-29"},
+  { _id:'TPC009', topic: "MongoDB", date:"2020-10-30"},
+  { _id:'TPC010', topic: "Node JS", date:"2020-10-31"},
+])
+________________________________________________________________________________________________
+
+//To Create and Insert Documents(Data) into Tasks Collection(Table)//
+
+db.tasks.insertMany([
+  { _id: 'TSK001', topic_id:'TPC001', date:'2020-10-15', assigned_to:'UID001', status: 'completed', task_name:'HTML Tags'},
+  { _id: 'TSK002', topic_id:'TPC002', date:'2020-10-17', assigned_to:'UID002', status: 'completed', task_name:'CSS Layouts'},
+  { _id: 'TSK003', topic_id:'TPC003', date:'2020-10-19', assigned_to:'UID003', status: 'completed', task_name:'Landing Page'},
+  { _id: 'TSK004', topic_id:'TPC004', date:'2020-10-21', assigned_to:'UID004', status: 'completed', task_name:'Javascript Functions'},
+  { _id: 'TSK005', topic_id:'TPC006', date:'2020-10-23', assigned_to:'UID005', status: 'pending', task_name:'Movie Search Application'},
+  { _id: 'TSK006', topic_id:'TPC008', date:'2020-10-25', assigned_to:'UID006', status: 'completed', task_name:'Simple eCommerce DataBase'},
+  { _id: 'TSK007', topic_id:'TPC009', date:'2020-10-27', assigned_to:'UID007', status: 'pending', task_name:'LMS DataBase'},
+  { _id: 'TSK008', topic_id:'TPC010', date:'2020-10-29', assigned_to:'UID008', status: 'pending', task_name:'Blog Application'},
+  { _id: 'TSK009', topic_id:'TPC002', date:'2020-10-30', assigned_to:'UID009', status: 'completed', task_name:'CSS Layouts'},
+  { _id: 'TSK010', topic_id:'TPC003', date:'2020-10-31', assigned_to:'UID010', status: 'completed', task_name:'HTML Tags'},
+])
+________________________________________________________________________________________________
+
+//To Create and Insert Documents(Data) into Company_Drives Collection(Table)//
+
+db.company_drives.insertMany([
+  { _id:'CD001',company: 'Google', date: '2020-10-20', students_appeared: ['UID001', 'UID002', 'UID003'] },
+  { _id:'CD002',company: 'Amazon', date: '2020-10-25', students_appeared: ['UID004', 'UID005', 'UID006'] },
+  { _id:'CD003',company: 'Zoho', date: '2020-10-30', students_appeared: ['UID007', 'UID008', 'UID009','UID010'] },
+])
+________________________________________________________________________________________________
+
+//To Create and Insert Documents(Data) into Mentors Collection(Table)//
+
+db.mentors.insertMany([
+  { _id: 'MID001', name: 'Saran', email: "saran@zen.com", batch:'B01WD', students: ['UID001','UID002','UID003','UID004','UID005'] },
+  { _id: 'MID002', name: 'Thiru', email: "thiru@zen.com", batch:'B02WE', students: ['UID006','UID007','UID008','UID009','UID010'] },
+])
