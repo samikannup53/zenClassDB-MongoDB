@@ -69,12 +69,12 @@ ________________________________________________________________________________
 //To Create and Insert Documents(Data) into Tasks Collection(Table)//
 
 db.tasks.insertMany([
-  { _id: 'TSK001', topic_id:'TPC001', date:'2020-10-15', assigned_to:'UID001', status: 'completed', task_name:'HTML Tags'},
+  { _id: 'TSK001', topic_id:'TPC001', date:'2020-10-15', assigned_to:'UID001', status: 'pending', task_name:'HTML Tags'},
   { _id: 'TSK002', topic_id:'TPC002', date:'2020-10-17', assigned_to:'UID002', status: 'completed', task_name:'CSS Layouts'},
   { _id: 'TSK003', topic_id:'TPC003', date:'2020-10-19', assigned_to:'UID003', status: 'completed', task_name:'Landing Page'},
-  { _id: 'TSK004', topic_id:'TPC004', date:'2020-10-21', assigned_to:'UID004', status: 'completed', task_name:'Javascript Functions'},
+  { _id: 'TSK004', topic_id:'TPC004', date:'2020-10-21', assigned_to:'UID004', status: 'pending', task_name:'Javascript Functions'},
   { _id: 'TSK005', topic_id:'TPC006', date:'2020-10-23', assigned_to:'UID005', status: 'pending', task_name:'Movie Search Application'},
-  { _id: 'TSK006', topic_id:'TPC008', date:'2020-10-25', assigned_to:'UID006', status: 'completed', task_name:'Simple eCommerce DataBase'},
+  { _id: 'TSK006', topic_id:'TPC008', date:'2020-10-25', assigned_to:'UID006', status: 'pending', task_name:'Simple eCommerce DataBase'},
   { _id: 'TSK007', topic_id:'TPC009', date:'2020-10-27', assigned_to:'UID007', status: 'pending', task_name:'LMS DataBase'},
   { _id: 'TSK008', topic_id:'TPC010', date:'2020-10-29', assigned_to:'UID008', status: 'pending', task_name:'Blog Application'},
   { _id: 'TSK009', topic_id:'TPC002', date:'2020-10-30', assigned_to:'UID009', status: 'completed', task_name:'CSS Layouts'},
@@ -163,3 +163,28 @@ db.mentors.find({
   }
 });
 -----------------------------------------------------------------------
+
+7. To Find Number of Users who are Absent and Task is not Submitted  between 15 oct-2020 and 31-oct-2020:
+
+db.attendance.aggregate([
+  {
+    $match: {
+      status: "Absent",
+      date: { $gte: "2020-10-15", $lte: "2020-10-31" }
+    }
+  },
+  {
+    $lookup: {
+      from: "tasks",               // Lookup tasks assigned to the absent users
+      localField: "user_id",        // Match user_id from attendance
+      foreignField: "assigned_to",  // Match assigned_to from tasks
+      as: "tasks"
+    }
+  },
+  {
+    $match: { "tasks.status": { $ne: "completed" } }  // Filter tasks that are not completed
+  },
+  {
+    $group: { _id: null, count: { $sum: 1 } }  // Group and count the absent users with pending tasks
+  }
+]);
