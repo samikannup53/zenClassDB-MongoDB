@@ -175,16 +175,15 @@ db.attendance.aggregate([
   },
   {
     $lookup: {
-      from: "tasks",               // Lookup tasks assigned to the absent users
-      localField: "user_id",        // Match user_id from attendance
-      foreignField: "assigned_to",  // Match assigned_to from tasks
+      from: "tasks",             
+      localField: "user_id",        
+      foreignField: "assigned_to",
       as: "tasks"
     }
   },
   {
-    $match: { "tasks.status": { $ne: "completed" } }  // Filter tasks that are not completed
+    $match: { "tasks.status": { $ne: "completed" } } 
   },
   {
-    $group: { _id: null, count: { $sum: 1 } }  // Group and count the absent users with pending tasks
-  }
+    $group: { _id: null, count: { $sum: 1 } } 
 ]);
