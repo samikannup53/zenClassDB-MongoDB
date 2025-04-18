@@ -97,3 +97,69 @@ db.mentors.insertMany([
   { _id: 'MID001', name: 'Saran', email: "saran@zen.com", batch:'B01WD', students: ['UID001','UID002','UID003','UID004','UID005'] },
   { _id: 'MID002', name: 'Thiru', email: "thiru@zen.com", batch:'B02WE', students: ['UID006','UID007','UID008','UID009','UID010'] },
 ])
+
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+//QUERIES//
+
+1. To find All the Topics which are thought in the month of October:
+
+db.topics.find({
+  date: { $gte: "2020-10-01", $lte: "2020-10-31" }
+})
+---------------------------------------------------------------------
+
+2. To find All the Tasks which are Assigned in the month of October:
+
+db.tasks.find({
+  date: { $gte: "2020-10-01", $lte: "2020-10-31" }
+})
+----------------------------------------------------------------------
+
+3. To Find all Company Drives Appeared between 15 oct-2020 & 31-oct-2020:
+
+db.company_drives.find({
+  date: { $gte: "2020-10-15", $lte: "2020-10-31" }
+})
+---------------------------------------------------------------------
+
+4. To Find all Company Drives & students Appeared for Placement:
+
+db.company_drives.aggregate([
+  {
+    $lookup: {
+      from: "users",                   
+      localField: "students_appeared",  
+      foreignField: "_id",             
+      as: "appeared_students_details"         
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      company: 1,
+      date: 1,
+      appeared_students: {
+        name: 1,
+        email: 1,
+        batch: 1,
+        mentor:1
+      }
+    }
+  }
+])
+----------------------------------------------------------------------
+
+5. To Find Number of Problems Solved by User in Codekata:
+
+db.codekata.find({}, { user_id: 1, problems_solved: 1 });
+-----------------------------------------------------------------------
+
+6. To Find All Mentors with who has the mentee's count more than 15:
+
+db.mentors.find({
+  $expr: {
+    $gt: [ { $size: "$students" }, 15 ]
+  }
+});
+-----------------------------------------------------------------------
