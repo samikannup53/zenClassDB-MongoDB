@@ -1,0 +1,7 @@
+//To Create and Insert Documents(Data) into Company_Drives Collection(Table)//
+
+db.company_drives.insertMany([
+  { _id:'CD001',company: 'Google', driveDate: '2020-10-20', studentsAppeared: ['UID001', 'UID002', 'UID003','UID005','UID007','UID008','UID009'] },
+  { _id:'CD002',company: 'Amazon', driveDate: '2020-10-25', studentsAppeared: ['UID001', 'UID002', 'UID004','UID005','UID006','UID008','UID009'] },
+  { _id:'CD003',company: 'Zoho', driveDate: '2020-11-01', studentsAppeared: ['UID001', 'UID002', 'UID003','UID004','UID005','UID006','UID007','UID008','UID009','UID0010'] }
+])
