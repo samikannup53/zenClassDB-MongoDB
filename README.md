@@ -1,8 +1,10 @@
-# 🗂️ MongoDB Management System for ZenClass
+# MongoDB Management System for ZenClass 🗂️
 
 This project demonstrates a simple **MongoDB Database Management System** to manage **Users**, **CodeKata** challenges, **Attendance**, **Topics**, **Tasks**, **Company Drives**, and **Mentors**. It allows the creation and management of key collections, sample data, and MongoDB operations to interact with the database.
 
-## 🛠️ **Database Structure**
+## **Database Structure** 🛠️
+
+The **ZenClassDB** contains the following collections:
 
 1. **Users**: Stores user details such as name, email, mentor ID, and batch.
 2. **CodeKata**: Contains the number of problems solved by each user.
@@ -12,16 +14,18 @@ This project demonstrates a simple **MongoDB Database Management System** to man
 6. **Company Drives**: Tracks company drives and the students who appeared for them.
 7. **Mentors**: Contains mentor details and the students they mentor.
 
-# MongoDB Operations 
+> 🚨 **Kindly Check my Notes Folder for Sample Collection and Documents which are used here and done Query.**
 
-## Database and Collection Setup
+## MongoDB Operations ⚙️
+
+### Database and Collection Setup 💾📚
 
 #### 1. Switch to the Database
 ```bash
  use zenClassDB
 ```
 
-  If the database doesn't exist, MongoDB will automatically create it when data is inserted.
+ If the database doesn't exist, MongoDB will automatically create it when data is inserted.
   
 ---
 
@@ -29,15 +33,19 @@ This project demonstrates a simple **MongoDB Database Management System** to man
 ```bash
  db.createCollection('collectionName')
 ```
+Use this to create a collection in database. Replace collectionName with the desired name of your collection.
+
 ---
 
 #### 3. Insert Sample Date into Collection
 ```bash
  db.collectionName.insertMany([{document1}, {document2}, ...])
 ```
+Insert multiple documents into the specified collection. Each document can be a JSON object.
+
 ---
 
-## Queries
+## Queries 🔍
 
 #### 1. To find All the Topics which are thought in the month of October:
 ```bash
