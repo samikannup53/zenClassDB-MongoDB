@@ -96,7 +96,7 @@ db.tasks.insertMany([
     { taskId: 'TSK009', topicID:'TPC009', assignedTo:'UID005',taskName:'MongoDB', dueDate:'2020-11-09', status: 'Pending'},
     { taskId: 'TSK009', topicID:'TPC009', assignedTo:'UID006',taskName:'MongoDB', dueDate:'2020-11-09', status: 'completed'},
     { taskId: 'TSK009', topicID:'TPC009', assignedTo:'UID007',taskName:'MongoDB', dueDate:'2020-11-09', status: 'completed'},
-    { taskId: 'TSK009', topicID:'TPC009', assignedTo:'UID008',taskName:'MongoDB', dueDate:'2020-11-09', status: 'compPendingleted'},
+    { taskId: 'TSK009', topicID:'TPC009', assignedTo:'UID008',taskName:'MongoDB', dueDate:'2020-11-09', status: 'Pending'},
     { taskId: 'TSK009', topicID:'TPC009', assignedTo:'UID009',taskName:'MongoDB', dueDate:'2020-11-09', status: 'completed'},
     { taskId: 'TSK009', topicID:'TPC009', assignedTo:'UID010',taskName:'MongoDB', dueDate:'2020-11-09', status: 'completed'},
   
