@@ -51,6 +51,15 @@ Insert multiple documents into the specified collection. Each document can be a 
 ```bash
 db.topics.find({date:{$gte:'2020-10-01', $lte:'2020-10-31'}})
 ```
+
+#### Sample Output
+```bash
+{
+  _id: 'TPC001',
+  date: '2020-10-10',
+  topic: 'HTML'
+}
+```
 ---
 
 #### 2. To find All the Tasks which are Assigned in the month of October:
@@ -61,6 +70,15 @@ db.tasks.aggregate([
   {$project:{taskId:'$_id.taskId', taskName:'$_id.taskName', dueDate:'$_id.dueDate', _id:0}},
   {$sort:{taskId:1}} 
 ])
+```
+
+#### Sample Output
+```bash 
+{
+  taskId: 'TSK001',
+  taskName: 'HTML Tags',
+  dueDate: '2020-10-12'
+}
 ```
 ---
 
@@ -74,6 +92,15 @@ db.company_drives.aggregate([
     appearedStudentsDetails:{$push:'$appearedStudents.studentName'}}}
 ])
 ```
+#### Sample Output
+```bash 
+{
+  _id: 'CD002',
+  company: 'Amazon',
+  driveDate: '2020-10-25',
+  appearedStudentsDetails: ['Logu','Sami','Ramu','Nandhu','Deepak','Rishi','Sri']
+}
+```
 ---
 
 #### 4. To Find all Company Drives & students Appeared for Placement:
@@ -85,6 +112,15 @@ db.company_drives.aggregate([
     appearedStudentsDetails:{$push:'$appearedStudents.studentName'}
   }}
 ])
+```
+#### Sample Output
+```bash 
+{
+  _id: 'CD003',
+  company: 'Zoho',
+  driveDate: '2020-11-01',
+  appearedStudentsDetails: ['Logu','Sami','Karthi','Ramu','Nandhu','Deepak','Selva','Rishi','Sri','Gokul']
+}
 ```
 ---
 
@@ -99,6 +135,14 @@ db.codekata.aggregate([
     problemsSolved:'$problems_solved'
   }}
 ])
+```
+#### Sample Output
+```bash 
+{
+  studentName: 'Gokul',
+  problemsAssigned: 10,
+  problemsSolved: 6
+}
 ```
 ---
 
@@ -116,6 +160,15 @@ db.users.aggregate([
     menteesCount:'$menteesCount',_id:0
   }}
 ])
+```
+#### Sample Output
+```bash 
+{
+  mentorID: 'MID002',
+  mentorName: 'Thiru',
+  mentorEmail: 'thiru@zen.com',
+  menteesCount: 7
+}
 ```
 ---
 
@@ -138,6 +191,19 @@ db.attendance.aggregate([
   }}
 ])
 ```
+#### Sample Output
+```bash 
+{
+  studentName: 'Sami',
+  totalAbsent: 1,
+  details: [
+    {
+      date: '2020-10-25',
+      topic: 'React JS'
+    }
+  ]
+}
+```
 ---
 
 #### 8. To Find Users who are Not Submitted Task between 15 oct-2020 and 31-oct-2020:
@@ -155,6 +221,24 @@ db.tasks.aggregate([
     pendingTaskDetails:'$pendingTaskDetails'}
   }
 ])
+```
+#### Sample Output
+
+```bash 
+{
+  studentName: 'Sri',
+  noOfTasksPending: 2,
+  pendingTaskDetails: [
+    {
+      taskName: 'JS Functions',
+      dueDate: '2020-10-20'
+    },
+    {
+      taskName: 'React App',
+      dueDate: '2020-10-27'
+    }
+  ]
+}
 ```
 ---
 
